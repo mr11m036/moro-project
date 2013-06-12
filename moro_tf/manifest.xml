@@ -1,0 +1,17 @@
+<package>
+  <description brief="moro_tf">
+
+     moro_tf
+
+  </description>
+  <author>Ubuntu12.04-Sandbox2</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/moro_tf</url>
+  <depend package="roscpp"/>
+  <depend package="tf"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+
