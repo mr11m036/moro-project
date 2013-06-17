@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+
+
+<robot name="taurob">
+  <link name="base_link">
+    <visual>
+      <geometry>
+       <box size="0.9 .6 .3"/>
+      </geometry>
+    </visual>
+  </link>
+
+ <link name="left_rod">
+    <visual>
+      <geometry>
+        <box size="0.04 .04 .2"/>
+      </geometry>
+ 	<origin rpy="0 0 0" xyz="0 0 0"/>
+ 	<material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+ <link name="left_axis">
+    <visual>
+      <geometry>
+        <cylinder length="0.06" radius="0.0075"/>
+      </geometry>
+ 	<origin rpy="1.57075  0 0" xyz="0 0 0"/>
+ 	<material name="aqua">
+        <color rgba="0 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+<joint name="base_to_left_rod" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_rod"/>
+	<origin xyz="0.35 0.08 .2"/>
+ </joint>
+
+
+<joint name="tilt" type="continuous">
+    <parent link="left_rod"/>
+    <child link="left_axis"/>
+	<origin xyz="0 -0.01 0.1"/>
+ 	<axis xyz="0 -1 0" />
+ </joint>
+
+ <link name="sick_lms111">
+    <visual>
+      <geometry>
+        <box size="0.105  0.094 .116"/>
+      </geometry>
+ 	<material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+ 	<origin rpy="0 0 0" xyz="-0.004 -0.047 0"/>
+    </visual>
+  </link>
+
+<joint name="left_axis_to_sick" type="fixed">
+    <parent link="left_axis"/>
+    <child link="sick_lms111"/>
+	<origin xyz="0 -0.03 0"/>
+ </joint>
+
+ <sensor name="sick_lasercenter" update_rate="25">
+   <parent link="sick_lms111"/>
+   <origin xyz="0 0 0.058" rpy="0 0 0"/>
+   <ray>
+     <horizontal samples="100" resolution="1" min_angle="-1.5708" max_angle="1.5708"/>
+     <vertical samples="1" resolution="1" min_angle="0" max_angle="0"/>
+   </ray>
+ </sensor>
+
+
+</robot>
+
