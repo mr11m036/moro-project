@@ -226,6 +226,19 @@ rospack_gensrv/fast:
 .PHONY : rospack_gensrv/fast
 
 #=============================================================================
+# Target rules for targets named taurob_state_publisher
+
+# Build rule for target.
+taurob_state_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 taurob_state_publisher
+.PHONY : taurob_state_publisher
+
+# fast build rule for target.
+taurob_state_publisher/fast:
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/build
+.PHONY : taurob_state_publisher/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -346,6 +359,21 @@ src/tf_listener.s:
 	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/src/tf_listener.s
 .PHONY : src/tf_listener.s
 
+# target to build an object file
+src/tf_robotstate_broadcaster.o:
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/src/tf_robotstate_broadcaster.o
+.PHONY : src/tf_robotstate_broadcaster.o
+
+# target to preprocess a source file
+src/tf_robotstate_broadcaster.i:
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/src/tf_robotstate_broadcaster.i
+.PHONY : src/tf_robotstate_broadcaster.i
+
+# target to generate assembly for a file
+src/tf_robotstate_broadcaster.s:
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/src/tf_robotstate_broadcaster.s
+.PHONY : src/tf_robotstate_broadcaster.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -364,6 +392,7 @@ help:
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
+	@echo "... taurob_state_publisher"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
@@ -377,6 +406,9 @@ help:
 	@echo "... src/tf_listener.o"
 	@echo "... src/tf_listener.i"
 	@echo "... src/tf_listener.s"
+	@echo "... src/tf_robotstate_broadcaster.o"
+	@echo "... src/tf_robotstate_broadcaster.i"
+	@echo "... src/tf_robotstate_broadcaster.s"
 .PHONY : help
 
 

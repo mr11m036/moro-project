@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
+
+
+
 <robot name="taurob">
-  <link name="base_link">
+  <link name="base_robot">
     <visual>
       <geometry>
        <box size="0.9 .6 .3"/>
@@ -20,16 +23,6 @@
     </visual>
   </link>
 
- <link name="right_rod">
-    <visual>
-      <geometry>
-        <box size="0.04 .04 .2"/>
-      </geometry>
- 	<origin rpy="0 0 0" xyz="0 0 0"/>
-	<material name="white" />
-    </visual>
-  </link>
-
  <link name="left_axis">
     <visual>
       <geometry>
@@ -43,19 +36,13 @@
   </link>
 
 <joint name="base_to_left_rod" type="fixed">
-    <parent link="base_link"/>
+    <parent link="base_robot"/>
     <child link="left_rod"/>
 	<origin xyz="0.35 0.08 .2"/>
  </joint>
 
-<joint name="base_to_right_rod" type="fixed">
-    <parent link="base_link"/>
-    <child link="right_rod"/>
-	<origin xyz="0.35 -0.08 .2"/>
- </joint>
 
-
-<joint name="left_rod_to_left_axis" type="continuous">
+<joint name="tilt" type="continuous">
     <parent link="left_rod"/>
     <child link="left_axis"/>
 	<origin xyz="0 -0.01 0.1"/>
@@ -88,6 +75,14 @@
      <vertical samples="1" resolution="1" min_angle="0" max_angle="0"/>
    </ray>
  </sensor>
+
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="base_footprint"/>
+
+  <joint name="base_footpring_joint" type="fixed">
+    <parent link="odom"/>
+    <child link="base_robot"/>
+  </joint>
 
 </robot>
 

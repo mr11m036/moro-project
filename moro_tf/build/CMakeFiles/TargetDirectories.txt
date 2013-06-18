@@ -8,6 +8,7 @@
 /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/rospack_genmsg.dir
 /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/rospack_genmsg_libexe.dir
 /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/rospack_gensrv.dir
+/home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/taurob_state_publisher.dir
 /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/test.dir
 /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/test-future.dir
 /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles/test-results.dir

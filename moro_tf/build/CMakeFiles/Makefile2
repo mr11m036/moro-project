@@ -362,6 +362,41 @@ clean: CMakeFiles/rospack_gensrv.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/taurob_state_publisher.dir
+
+# All Build rule for target.
+CMakeFiles/taurob_state_publisher.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/depend
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles  1
+	@echo "Built target taurob_state_publisher"
+.PHONY : CMakeFiles/taurob_state_publisher.dir/all
+
+# Include target in all.
+all: CMakeFiles/taurob_state_publisher.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/taurob_state_publisher.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/taurob_state_publisher.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles 0
+.PHONY : CMakeFiles/taurob_state_publisher.dir/rule
+
+# Convenience name for target.
+taurob_state_publisher: CMakeFiles/taurob_state_publisher.dir/rule
+.PHONY : taurob_state_publisher
+
+# clean rule for target.
+CMakeFiles/taurob_state_publisher.dir/clean:
+	$(MAKE) -f CMakeFiles/taurob_state_publisher.dir/build.make CMakeFiles/taurob_state_publisher.dir/clean
+.PHONY : CMakeFiles/taurob_state_publisher.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/taurob_state_publisher.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
@@ -523,7 +558,7 @@ clean: CMakeFiles/tests.dir/clean
 CMakeFiles/tf_broadcaster.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/tf_broadcaster.dir/build.make CMakeFiles/tf_broadcaster.dir/depend
 	$(MAKE) -f CMakeFiles/tf_broadcaster.dir/build.make CMakeFiles/tf_broadcaster.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles  2
 	@echo "Built target tf_broadcaster"
 .PHONY : CMakeFiles/tf_broadcaster.dir/all
 
@@ -558,7 +593,7 @@ clean: CMakeFiles/tf_broadcaster.dir/clean
 CMakeFiles/tf_listener.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/depend
 	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/cd/fuerte_workspace/sandbox/moro-project/moro_tf/build/CMakeFiles  3
 	@echo "Built target tf_listener"
 .PHONY : CMakeFiles/tf_listener.dir/all
 

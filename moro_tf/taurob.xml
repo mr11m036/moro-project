@@ -49,7 +49,7 @@
  	<axis xyz="0 -1 0" />
  </joint>
 
- <link name="sick_lms111">
+ <link name="laser">
     <visual>
       <geometry>
         <box size="0.105  0.094 .116"/>
@@ -63,12 +63,12 @@
 
 <joint name="left_axis_to_sick" type="fixed">
     <parent link="left_axis"/>
-    <child link="sick_lms111"/>
+    <child link="laser"/>
 	<origin xyz="0 -0.03 0"/>
  </joint>
 
- <sensor name="sick_lasercenter" update_rate="25">
-   <parent link="sick_lms111"/>
+ <sensor name="laser" update_rate="25">
+   <parent link="laser"/>
    <origin xyz="0 0 0.058" rpy="0 0 0"/>
    <ray>
      <horizontal samples="100" resolution="1" min_angle="-1.5708" max_angle="1.5708"/>
