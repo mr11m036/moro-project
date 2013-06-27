@@ -1,0 +1,34 @@
+<launch>
+	<master auto="start"/>   
+	<arg name="gui" default="False" />
+
+	<param name="use_gui" value="$(arg gui)"/>
+        <param name="robot_description" command="cat $(find moro_tf)/taurob.xml" />
+	<param name="pub_map_odom_transform" value="true"/>
+	<param name="map_frame" value="map" />
+	<param name="base_frame" value="base_link" />
+	<param name="odom_frame" value="odom" />
+
+	<param name="ECU_Host_IP" value="10.0.0.2" />
+        <param name="ECU_Host_Port" value="8080" />
+        <param name="SAS_Control_Topic" value="sas_control_str" />   
+
+	<!-- All nodes that are required by the taurob plattform -->  
+	<node pkg="sas_ui_server" type="sas_ui_server" name="sas_ui_server" />
+	<node pkg="sas_ecu_client" type="sas_ecu_client" name="sas_ecu_client" />
+	<node pkg="sas_ecu_client" type="OdometryTfBroadcaster" name="OdometryTfBroadcaster" />  
+	<node pkg="sas_navigation" type="NavController"  name ="NavController"/>
+	<node pkg="sas_tests" type="ControlCommandsTuning" name="ControlCommandsTuning" /> 
+
+	<!-- Nodes to publush the joint states of the tilt sensor plattform -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node name="taurob_state_publisher" pkg="moro_tf" type="taurob_state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find moro_tf)/urdf.vcg" />
+
+	<node type="laser_scan_assembler" pkg="laser_assembler" name="my_assembler">
+		<remap from="scan" to="scan"/>
+    		<param name="max_scans" type="int" value="400" />
+    		<param name="fixed_frame" type="string" value="odom" />
+  	</node>
+		
+</launch>
