@@ -1,9 +1,23 @@
+/*!*********************************************************************\
+* Dateiname: moroAssembleScans.cpp
+* Autor : Mario Grotschar
+* Projekt : Moro
+* Copyright (C) <<COPYRIGHT>>
+*
+* !\brief  Fordert eine Point Cloud an.
+*
+* Datum: Autor: Grund der Aenderung:
+* 1.07.2013 Mario Grotschar Neuerstellung
+* <<DATUM>> <<AUTOR>> <<AENDERUNGSGRUND>>
+*
+\**********************************************************************/
+
 #include <ros/ros.h>
 #include "/opt/ros/fuerte/stacks/laser_pipeline/laser_assembler/srv_gen/cpp/include/laser_assembler/AssembleScans.h"
 
 using namespace laser_assembler;
 
-const std::string default_frame_id ="laser";
+const std::string default_frame_id ="odom";
 
 int main(int argc, char **argv)
 {
