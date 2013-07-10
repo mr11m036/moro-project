@@ -27,6 +27,7 @@
 /* ---Constants -------------------------------------------------------*/
 const std::string sBaseParentFrame = "odom";
 const std::string sBaseChileFrame  = "base_link";
+const std::string sDynamixelTopic = "/dynamixel/pose";
 const double degree = M_PI/180;
 
 class CMoro {
@@ -36,7 +37,7 @@ public:
 		 odom_trans.header.frame_id  = sBaseParentFrame;
 		 odom_trans.child_frame_id	 = sBaseChileFrame;
 		 joint_pub = n.advertise<sensor_msgs::JointState>("joint_states", 1);
-		 joint_sub = n.subscribe("axservo",10, &CMoro::joint_callback, this);
+		 joint_sub = n.subscribe(sDynamixelTopic, 10, &CMoro::joint_callback, this);
 	};
 	void setParentHeaderID(std::string setParentID);
 	void setChildHeaderID(std::string setChildID);

@@ -13,7 +13,16 @@
     // robot state
     float tilt = 0, tinc = degree;
 
-void messageCb( const std_msgs::Float32& toggle_msg){
+
+    /// messageCb
+    /*!
+           Detailierte beschreibung der Funktionalität
+      \sa messageCb()
+      \param pa1 toggle_msg
+      \param pa2 Parameter 2
+     */
+
+    void messageCb( const std_msgs::Float32& toggle_msg){
 	 tilt = toggle_msg.data;
      ROS_ERROR("Tilt angle: %f: ",tilt);
 }
